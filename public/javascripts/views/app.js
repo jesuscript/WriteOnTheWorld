@@ -3,9 +3,8 @@ define([
   'underscore',
   'backbone',
   'vm',
-  'events',
   'text!templates/layout.html.ejs' 
-], function($, _, Backbone, Vm, Events, layoutTemplate){
+], function($, _, Backbone, Vm, layoutTemplate){
   var AppView = Backbone.View.extend({
     el: $('.container'),
     initialize: function () {

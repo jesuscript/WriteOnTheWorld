@@ -4,8 +4,7 @@ require.config({
     jquery: 'lib/jquery/jquery-min',
     underscore: 'lib/underscore/underscore-min',
     backbone: 'lib/backbone/backbone-min',
-    //sinon: 'lib/sinon/sinon.js',
-    events: 'lib/events/events.min',
+    
 
     // Require.js plugins
     text: 'lib/require/text',

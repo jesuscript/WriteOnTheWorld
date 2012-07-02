@@ -17,7 +17,10 @@ define([
       var that = this;
 
       var message = new MessageModel();
-      message.save({ message: $('.message').val()}, {
+
+      message.save({ 
+        message: $('.message').val()
+      }, {
         success: function () {
           that.trigger('postMessage');
         }
