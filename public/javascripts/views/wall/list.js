@@ -6,7 +6,7 @@ define([
   'text!templates/message/list.html.ejs'
 ], function($, _, Backbone, MessagesCollection, wallListTemplate){
   var WallList = Backbone.View.extend({
-    el: '.wall-list-container',
+    el: '.message-wall-container',
     render: function () {
       var that = this;
       var messages = new MessagesCollection();
