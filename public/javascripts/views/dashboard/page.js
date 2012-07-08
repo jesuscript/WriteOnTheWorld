@@ -5,9 +5,10 @@ define([
   'vm',
   'text!templates/template.html.ejs',
   'views/wall/form',
-  'views/wall/list'
+  'views/wall/list',
+  'views/gmaps/gmaps'
 ], function($, _, Backbone, Vm, appTemplate, WallFormView, 
-            WallListView){
+            WallListView, GmapsView){
   var DashboardPage = Backbone.View.extend({
     el: '.page',
     render: function () {
@@ -15,14 +16,17 @@ define([
       
       // Create new Backbone views using the view manager (does some extra goodies);
       var vent = _.extend({},Backbone.Events);
-      this.wallFormView = Vm.create(this,'WallFormView',WallFormView,
+      var wallFormView = Vm.create(this,'WallFormView',WallFormView,
                                     vent);
-      this.wallFormView.render();
+      wallFormView.render();
       
       
-      this.wallListView = Vm.create(this,'WallListView',WallListView,
+      var wallListView = Vm.create(this,'WallListView',WallListView,
                                     vent);
-      this.wallListView.render();
+      wallListView.render();
+
+      var gmapsView = Vm.create(this,'GmapsView', GmapsView, vent);
+      gmapsView.render();
     }
   });
   return DashboardPage;

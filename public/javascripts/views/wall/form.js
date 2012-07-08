@@ -17,17 +17,33 @@ define([
       vent.bind("wallClick",this.show);
     },
     render: function () {
+      var self = this;
+
       $(this.el).html(messageFormTemplate);
-      $("#color-picker").miniColors();
+      $("#color-picker").miniColors({
+        change: function(){
+          $(".miniColors-colors").mouseup(function(e){
+            $(".miniColors-selector").remove();
+          });
+        }
+      });
+      $("#new-message").keyup(function(e){
+        if(e.keyCode == 13){
+          self.postMessage();
+        }
+      });
     },
     show: function(eHandle){
+      var $new_message = $("#new-message");
       this.X = eHandle.pageX;
       this.Y = eHandle.pageY;
 
       $(this.el).fadeIn(200);
-      $("#new-message").val("");
       $(this.el).css({top: this.Y + "px", 
                       left: this.X + "px"});
+
+      $new_message.val("");
+      $new_message.focus();
     },
     close: function(){
       $(this.el).fadeOut(200);

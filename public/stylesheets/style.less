@@ -12,12 +12,18 @@ a {
 .container{
     width: auto;
 }
-.page,.message-wall-container .actionable{
+.page,.message-wall-container .actionable, #map-container{
     position:absolute;
     left: 0px;
     top: 0px;
     right: 0px;
     bottom: 0px;
+}
+.message-wall-container .actionable{
+    z-index:1;
+}
+.gmaps-container{
+    z-index:0;
 }
 .message{
     display:inline-block;
@@ -48,6 +54,7 @@ a {
         font-size: 18px;
         font-weight:bold;
         vertical-align:middle;
+        margin-right: 7px;
     }
     .close-widget{
         cursor:pointer;

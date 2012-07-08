@@ -6,22 +6,23 @@ require.config({
     underscore: 'lib/underscore/underscore-min',
     backbone: 'lib/backbone/backbone-min',
     
-
     // Require.js plugins
     text: 'lib/require/text',
     require: 'lib/require/require',
-
 
     templates: '../../templates'
   },
   shim: {
     'minicolors' : {
       deps: ['jquery'],
+    },
+    'gmaps' : {
+      deps: ['jquery']
     }
   },
 
+  //TODO: remove this in production
   urlArgs: "bust=" +  (new Date()).getTime()
-
 });
 
 // Let's kick off the application
