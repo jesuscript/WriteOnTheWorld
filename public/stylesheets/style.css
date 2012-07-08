@@ -1,4 +1,6 @@
 @import 'bootstrap.css';
+
+@import 'jquery.miniColors.css';
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -21,6 +23,7 @@ a {
   display: inline-block;
   position: absolute;
   font-size: 32px;
+  font-weight: bold;
 }
 .message-widget {
   position: absolute;
@@ -39,4 +42,7 @@ a {
   padding: 10px 20px;
   font-size: 22px;
   font-weight: bold;
+}
+#color-picker {
+  display: inline-block;
 }

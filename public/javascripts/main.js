@@ -2,6 +2,7 @@ require.config({
   paths: {
     // Major libraries
     jquery: 'lib/jquery/jquery-min',
+    minicolors: 'lib/jquery/jquery.miniColors.min',
     underscore: 'lib/underscore/underscore-min',
     backbone: 'lib/backbone/backbone-min',
     
@@ -13,6 +14,12 @@ require.config({
 
     templates: '../../templates'
   },
+  shim: {
+    'minicolors' : {
+      deps: ['jquery'],
+    }
+  },
+
   urlArgs: "bust=" +  (new Date()).getTime()
 
 });

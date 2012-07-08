@@ -1,6 +1,6 @@
 <div class="actionable">
   <% _.each(messages, function(message) { %>
-    <span class="message" style="left:<%= message.get('X') %>px; top:<%= message.get('Y') %>px;">
+    <span class="message" style="left:<%= message.get('X') %>px; top:<%= message.get('Y') %>px; color: <%= message.get('color') %>">
       <%= message.get('message') %>
     </span>
   <% }); %>

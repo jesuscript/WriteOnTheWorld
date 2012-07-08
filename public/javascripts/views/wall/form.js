@@ -3,8 +3,10 @@ define([
   'underscore',
   'backbone',
   'models/message',
-  'text!templates/message/form.html.ejs'
-], function($, _, Backbone, MessageModel, messageFormTemplate){
+  'text!templates/message/form.html.ejs',
+  'minicolors'
+], function($, _, Backbone, MessageModel, 
+            messageFormTemplate){
   var WallForm = Backbone.View.extend({
     el: '.message-widget',
     initialize: function(vent){
@@ -16,6 +18,7 @@ define([
     },
     render: function () {
       $(this.el).html(messageFormTemplate);
+      $("#color-picker").miniColors();
     },
     show: function(eHandle){
       this.X = eHandle.pageX;
@@ -37,7 +40,8 @@ define([
       message.save({ 
         message: $('#new-message').val(),
         X: this.X,
-        Y: this.Y
+        Y: this.Y,
+        color: $("#color-picker").val()
       }, {
         success: function () {
           that.vent.trigger('postMessage');

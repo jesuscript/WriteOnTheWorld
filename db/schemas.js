@@ -5,6 +5,7 @@ Schema = mongoose.Schema;
 exports.schemas = {
   MessageSchema : new Schema({
     message: String,
+    color: String,
     X : Number,
     Y : Number,
     Z : Number

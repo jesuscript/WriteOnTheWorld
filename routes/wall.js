@@ -14,24 +14,24 @@ exports.r = {
 
   postMessage : function(req, res, next){
     var message = new db.models.Message();
-    console.log(req.body);
+
     message.message = req.body.message;
-    
-    if(req.body.X !== undefined && req.body.X !== null){
-      message.X = req.body.X;
-    }else{
-      message.X = Math.random() * 1280;
-    }
-    if(req.body.Y !== undefined && req.body.X !== null){
-      message.Y = req.body.Y;
-    }else{
-      message.Y = Math.random() * 1024;
-    }
 
-    message.Z = 0;
+    if(message.message){
+      message.X = (req.body.X !== undefined) ? req.body.X  
+        : Math.random() * 1280;
 
-    message.save(function () {
-      res.send(req.body);
-    });
+      message.Y = (req.body.Y !== undefined) ? req.body.Y 
+        : Math.random() * 1024;
+
+      message.color= (req.body.color !== undefined ) ? req.body.color 
+        : "#000000"
+        
+      message.Z = 0;
+
+      message.save(function () {
+        res.send(req.body);
+      });
+    }
   }
 }
