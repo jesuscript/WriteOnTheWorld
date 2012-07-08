@@ -16,9 +16,9 @@ define([
 
       $(document).ready(function(){
         this.map = new google.maps.Map(
-          document.getElementById("map-container") ,{
-            center: new google.maps.LatLng(0.0, 0.0),
-            zoom: 8,
+          document.getElementById("map-container"),{
+            center: new google.maps.LatLng(48.0, 15.0),//europe :)
+            zoom: 5,
             mapTypeId: google.maps.MapTypeId.ROADMAP 
           });
       });
