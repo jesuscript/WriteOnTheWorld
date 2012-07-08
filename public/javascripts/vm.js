@@ -21,7 +21,6 @@ define([
     } else {
       context.children[name] = view;
     }
-    //Events.trigger('viewCreated');
     return view;
   }
 

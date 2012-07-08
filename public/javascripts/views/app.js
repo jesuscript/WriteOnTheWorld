@@ -14,7 +14,7 @@ define([
       var that = this;
       $(this.el).html(layoutTemplate);
       Backbone.history.start();
-    } 
+    }
   });
   return AppView;
 });

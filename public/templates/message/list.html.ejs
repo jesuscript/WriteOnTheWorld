@@ -1,5 +1,7 @@
-<% _.each(messages, function(message) { %>
-<pre class="message">
-  <%= message.get('message') %>
-</pre>
-<% }); %>
+<div class="actionable">
+  <% _.each(messages, function(message) { %>
+    <span class="message" style="left:<%= message.get('X') %>px; top:<%= message.get('Y') %>px;">
+      <%= message.get('message') %>
+    </span>
+  <% }); %>
+</div>

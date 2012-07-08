@@ -14,18 +14,18 @@ exports.r = {
 
   postMessage : function(req, res, next){
     var message = new db.models.Message();
-
+    console.log(req.body);
     message.message = req.body.message;
-
+    
     if(req.body.X !== undefined && req.body.X !== null){
       message.X = req.body.X;
     }else{
-      message.X = Math.random() * 900;
+      message.X = Math.random() * 1280;
     }
     if(req.body.Y !== undefined && req.body.X !== null){
       message.Y = req.body.Y;
     }else{
-      message.Y = Math.random() * 500;
+      message.Y = Math.random() * 1024;
     }
 
     message.Z = 0;
