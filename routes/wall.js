@@ -26,11 +26,13 @@ exports.r = {
 
       message.color= (req.body.color !== undefined ) ? req.body.color 
         : "#000000"
-        
-      message.Z = 0;
 
-      message.save(function () {
-        res.send(req.body);
+      db.models.Message.count({},function(err,c){
+        message.Z = c;
+
+        message.save(function () {
+          res.send(req.body);
+        });
       });
     }
   }
