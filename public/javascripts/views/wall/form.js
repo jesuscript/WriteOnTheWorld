@@ -29,8 +29,12 @@ define([
       $(this.el).css({top: this.Y + "px", 
                       left: this.X + "px"});
     },
+    close: function(){
+      $(this.el).fadeOut(200);
+    },
     events: {
-      'click .js-post-message': 'postMessage'
+      'click .js-post-message': 'postMessage',
+      'click .close-widget' : 'close'
     },
     postMessage: function() {
       var that = this;
@@ -45,7 +49,7 @@ define([
       }, {
         success: function () {
           that.vent.trigger('postMessage');
-          $(that.el).fadeOut(200);
+          that.close();
         }
       });
     }
