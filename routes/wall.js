@@ -18,14 +18,9 @@ exports.r = {
     message.message = req.body.message;
 
     if(message.message){
-      message.X = (req.body.X !== undefined) ? req.body.X  
-        : Math.random() * 1280;
-
-      message.Y = (req.body.Y !== undefined) ? req.body.Y 
-        : Math.random() * 1024;
-
-      message.color= (req.body.color !== undefined ) ? req.body.color 
-        : "#000000"
+      message.lat = req.body.lat;
+      message.lng = req.body.lng;
+      message.color=  req.body.color ;
 
       db.models.Message.count({},function(err,c){
         message.Z = c;

@@ -20,11 +20,11 @@ define([
                                     vent);
       wallFormView.render();
       
-      
+      /*
       var wallListView = Vm.create(this,'WallListView',WallListView,
                                     vent);
       wallListView.render();
-
+      */
       var gmapsView = Vm.create(this,'GmapsView', GmapsView, vent);
       gmapsView.render();
     }

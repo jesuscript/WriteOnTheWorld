@@ -1,1 +1,17 @@
 This is my hacky attempt to learn some node, backbone and mongo
+
+The coreidea is:
+
+* Render the world map (using Google Maps API)
+* Allow writing short messages on the map
+* Each message is bound to a specific location (latitude and longitude)
+* Messages are posted anonymously
+* Display messages when the map renders
+
+Would be good to have:
+
+* If two messages overlap at current zoom level, figure out which one to show based on some ranking system
+* Use peerindex score + twitter sign in for ranking? (but still maintain anonymity)
+* Vote message up/down functionality (only for signed in users)
+* Make voting only available to signed in 
+* Instead of fetching all messages at once, select based on zoom level, viewport bounds and ranking

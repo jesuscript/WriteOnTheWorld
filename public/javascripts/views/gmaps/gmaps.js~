@@ -1,7 +1,0 @@
-define([
-  'jquery',
-  'underscore',
-  'backbone',
-  'gmaps' //,
-  //'text!templates/gmaps/gmaps.html.ejs'
-], function($, _, Backbone, Gmaps

@@ -6,8 +6,8 @@ exports.schemas = {
   MessageSchema : new Schema({
     message: String,
     color: String,
-    X : Number,
-    Y : Number,
+    lat : Number,
+    lng : Number,
     Z : Number
   })
 };

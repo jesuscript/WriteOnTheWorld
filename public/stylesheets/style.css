@@ -16,7 +16,7 @@ a {
 #map-container {
   position: absolute;
   left: 0px;
-  top: 0px;
+  top: 20px;
   right: 0px;
   bottom: 0px;
 }
