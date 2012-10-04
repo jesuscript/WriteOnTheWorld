@@ -34,15 +34,17 @@ define([
             }
           ]
         });
+
+        messages.fetch({
+          success: function(messages){
+            _.each(messages.models, function(message){
+              var mo = new MessageOverlay(message,self.map);
+            });
+          }
+        });
+
       });
 
-      messages.fetch({
-        success: function(messages){
-          _.each(messages.models, function(message){
-            var mo = new MessageOverlay(message,self.map);
-          });
-        }
-      });
 
     }
   });
